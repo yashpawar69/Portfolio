@@ -59,21 +59,21 @@ const ContactSection = () => {
                 <Mail className="h-6 w-6 text-accent mt-1" />
                 <div>
                   <h4 className="font-semibold">Email</h4>
-                  <p className="text-muted-foreground">john.doe@email.com</p>
+                  <p className="text-muted-foreground">csyashp@gmail.com</p>
                 </div>
               </div>
               <div className="flex items-start gap-4">
                 <Phone className="h-6 w-6 text-accent mt-1" />
                 <div>
                   <h4 className="font-semibold">Phone</h4>
-                  <p className="text-muted-foreground">+1 (234) 567-890</p>
+                  <p className="text-muted-foreground">+91 9653232783</p>
                 </div>
               </div>
               <div className="flex items-start gap-4">
                 <MapPin className="h-6 w-6 text-accent mt-1" />
                 <div>
                   <h4 className="font-semibold">Location</h4>
-                  <p className="text-muted-foreground">San Francisco, CA</p>
+                  <p className="text-muted-foreground">Mumbai, India</p>
                 </div>
               </div>
             </div>

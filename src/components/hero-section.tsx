@@ -9,7 +9,7 @@ const HeroSection = () => {
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="flex flex-col items-center md:items-start text-center md:text-left">
             <h1 className="font-headline text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-4">
-              Hi, I'm John Doe
+              Hi, I'm Yash Pawar
             </h1>
             <p className="text-xl md:text-2xl text-primary/80 mb-8 font-headline">
               A Passionate <span className="text-accent">MERN Stack</span> Developer
@@ -34,7 +34,7 @@ const HeroSection = () => {
             <div className="relative w-72 h-72 md:w-80 md:h-80 lg:w-96 lg:h-96">
               <Image
                 src="https://placehold.co/400x400.png"
-                alt="John Doe"
+                alt="Yash Pawar"
                 width={400}
                 height={400}
                 className="rounded-full object-cover border-4 border-accent shadow-lg"

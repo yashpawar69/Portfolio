@@ -51,7 +51,7 @@ const Header = () => {
       <div className="container flex h-16 items-center justify-between">
         <Link href="/" className="flex items-center gap-2">
           <Code className="h-6 w-6 text-accent" />
-          <span className="font-bold font-headline text-lg">John Doe</span>
+          <span className="font-bold font-headline text-lg">Yash Pawar</span>
         </Link>
         <nav className="hidden md:flex items-center gap-6 text-sm">
           <NavLinkItems />
@@ -68,7 +68,7 @@ const Header = () => {
               <div className="flex justify-between items-center mb-6">
                 <Link href="/" className="flex items-center gap-2" onClick={() => setIsOpen(false)}>
                   <Code className="h-6 w-6 text-accent" />
-                  <span className="font-bold font-headline text-lg">John Doe</span>
+                  <span className="font-bold font-headline text-lg">Yash Pawar</span>
                 </Link>
                 <Button variant="ghost" size="icon" onClick={() => setIsOpen(false)}>
                   <X className="h-6 w-6" />

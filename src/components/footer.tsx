@@ -10,9 +10,9 @@ const Footer = () => {
           <div className="text-center md:text-left">
              <Link href="/" className="flex items-center gap-2 mb-2 justify-center md:justify-start">
                 <Code className="h-6 w-6 text-accent" />
-                <span className="font-bold font-headline text-lg">John Doe</span>
+                <span className="font-bold font-headline text-lg">Yash Pawar</span>
             </Link>
-            <p className="text-sm text-primary-foreground/80">© {new Date().getFullYear()} John Doe. All rights reserved.</p>
+            <p className="text-sm text-primary-foreground/80">© {new Date().getFullYear()} Yash Pawar. All rights reserved.</p>
           </div>
           <div className="flex items-center gap-4">
             <Button asChild variant="ghost" size="icon" className="text-primary-foreground/80 hover:bg-primary-foreground/10 hover:text-primary-foreground">
