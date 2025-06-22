@@ -16,7 +16,7 @@ const projects = [
   }
   ,
   {
-    title: 'AI-Powered Blogging Platform',
+    title: 'My Journal',
     description: 'A minimalist, elegant blogging platform where users can write, edit, and manage posts effortlessly. Built with Next.js and Tailwind CSS, AI-powered live tag suggestions enhance discoverability and streamline content creation.',
     image: 'https://placehold.co/600x400.png',
     technologies: ['Next.js', 'Tailwind CSS', 'Genkit', 'AI'],
