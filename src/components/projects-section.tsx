@@ -25,13 +25,13 @@ const projects = [
     aiHint: 'blog writing interface',
   },
   {
-    title: 'Portfolio Website Generator',
-    description: 'A dynamic web application that allows users to generate and customize their own portfolio website by filling out a simple form, with multiple templates to choose from.',
+    title: 'Shop Me',
+    description: 'Shop Me — A sleek, AI-powered shopping platform with curated product discovery, wishlist features, and smart recommendations. Includes a minimalist admin dashboard, seamless checkout, and external retailer integration for smooth purchasing.',
     image: 'https://placehold.co/600x400.png',
-    technologies: ['Next.js', 'Tailwind CSS', 'Firebase', 'Vercel'],
+    technologies: ['Next.js', 'Tailwind CSS', 'Genkit', 'AI', 'Stripe'],
     liveUrl: '#',
     githubUrl: '#',
-    aiHint: 'web design',
+    aiHint: 'online shopping',
   },
 ]
 
