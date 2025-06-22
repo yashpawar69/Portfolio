@@ -8,7 +8,7 @@ const projects = [
   {
     title: 'Next Chess Game',
     description: 'An interactive full-stack online chess platform built with React and Next.js. Features real-time gameplay, and a responsive UI. Ideal for casual and competitive play.',
-    image: '/next.png',
+    image: 'https://placehold.co/600x400.png',
     technologies: ['React', 'Next.js', 'Node.js', 'Express', 'Tailwind CSS', 'Vercel'],
     liveUrl: 'https://next-chess-00.vercel.app/',
     githubUrl: 'https://github.com/yashpawar69/NextChess',
