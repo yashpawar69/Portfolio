@@ -42,9 +42,9 @@ const projects = [
   },
   {
     title: 'Ludo Game',
-    description: 'A classic Ludo board game brought to life with a modern, interactive web interface. Built with React and Socket.IO, it supports real-time multiplayer gameplay.',
+    description: 'A modern, interactive web version of the classic Ludo game for 2-4 players. Features an intuitive, responsive board with drag-and-drop token movement and smooth animations for dice rolls and player turns.',
     image: 'https://placehold.co/600x400.png',
-    technologies: ['React', 'Node.js', 'Socket.IO', 'Express', 'Tailwind CSS'],
+    technologies: ['Next.js', 'TypeScript', 'Tailwind CSS'],
     liveUrl: '#',
     githubUrl: '#',
     aiHint: 'ludo board game',
