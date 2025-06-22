@@ -91,8 +91,7 @@ const HeroSection = () => {
               <Image
                 src="/images/me.jpeg"
                 alt="Yash Pawar"
-                width={400}
-                height={400}
+                fill
                 className="rounded-full object-cover border-4 border-accent shadow-lg"
                 data-ai-hint="professional headshot"
               />
