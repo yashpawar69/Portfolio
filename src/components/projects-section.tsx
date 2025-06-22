@@ -61,12 +61,12 @@ const ProjectsSection = () => {
                 </div>
               </CardContent>
               <CardFooter className="flex justify-end gap-4">
-                <Button asChild variant="outline">
+                <Button asChild variant="outline" disabled={project.githubUrl === '#'}>
                   <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
                     <Github className="mr-2 h-4 w-4" /> GitHub
                   </a>
                 </Button>
-                <Button asChild className="bg-accent hover:bg-accent/90 text-accent-foreground">
+                <Button asChild className="bg-accent hover:bg-accent/90 text-accent-foreground" disabled={project.liveUrl === '#'}>
                   <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
                     <ExternalLink className="mr-2 h-4 w-4" /> Live Demo
                   </a>
