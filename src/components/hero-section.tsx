@@ -80,7 +80,7 @@ const HeroSection = () => {
                   Contact Me <ArrowRight className="ml-2 h-5 w-5" />
                 </a>
               </Button>
-              <a href="/Yash-Pawar-resume.pdf" download="Yash-Pawar-resume.pdf" className={cn(buttonVariants({ variant: "outline", size: "lg" }))}>
+              <a href="/Yash-Pawar-resume.pdf" download="Yash-Pawar-resume.pdf" target="_blank" rel="noopener noreferrer" className={cn(buttonVariants({ variant: "outline", size: "lg" }))}>
                 Download Resume <Download className="ml-2 h-5 w-5" />
               </a>
             </div>
