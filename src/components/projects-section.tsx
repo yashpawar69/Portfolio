@@ -29,7 +29,7 @@ const projects = [
     technologies: ['react', 'mongodb', 'gemini', 'Next.js', 'Tailwind CSS'],
     liveUrl: '#',
     githubUrl: '#',
-    aiHint: 'blog journal writing',
+    aiHint: 'blogging writing',
   },
   {
     title: 'Shop Me',
@@ -38,12 +38,12 @@ const projects = [
     technologies: ['Next.js', 'MongoDB', 'React', 'Tailwind CSS', 'TypeScript', 'Gemini'],
     liveUrl: 'https://shopme-git-master-yashs-projects-e4896251.vercel.app/',
     githubUrl: '#',
-    aiHint: 'fashion ecommerce online',
+    aiHint: 'fashion online shopping',
   },
   {
     title: 'Ludo Game',
     description: 'A modern, interactive web version of the classic Ludo game for 2-4 players. Features an intuitive, responsive board with drag-and-drop token movement and smooth animations for dice rolls and player turns.',
-    image: 'https://placehold.co/600x400.png',
+    image: '/images/ludo.png',
     technologies: ['Next.js', 'TypeScript', 'Tailwind CSS'],
     liveUrl: '#',
     githubUrl: '#',
