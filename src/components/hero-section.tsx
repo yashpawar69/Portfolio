@@ -7,53 +7,53 @@ import { Download, ArrowRight } from 'lucide-react'
 
 const HeroSection = () => {
   const [typedText, setTypedText] = useState('');
+  const textToRotate = "MERN Stack";
+  const typingDelay = 150;
+  const erasingDelay = 100;
+  const newTextDelay = 2000; // Delay before starting to erase
   
-  const toRotate = ["MERN Stack"];
-  const period = 2000;
-  const typingSpeed = 250;
-  const deletingSpeed = 150;
-
-  const loopNum = useRef(0);
-  const isDeleting = useRef(false);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const textIndex = useRef(0);
+  const isDeleting = useRef(false);
 
   useEffect(() => {
-    const handleType = () => {
-      const i = loopNum.current % toRotate.length;
-      const fullText = toRotate[i];
-      
-      setTypedText(prev => {
-        const nextText = isDeleting.current
-          ? fullText.substring(0, prev.length - 1)
-          : fullText.substring(0, prev.length + 1);
-        
-        let nextSpeed = typingSpeed;
-        if (isDeleting.current) {
-            nextSpeed = deletingSpeed;
-        }
+    const handleTyping = () => {
+      // Determine the current text based on whether we are typing or deleting
+      const currentText = isDeleting.current
+        ? textToRotate.substring(0, textIndex.current - 1)
+        : textToRotate.substring(0, textIndex.current + 1);
 
-        if (!isDeleting.current && nextText === fullText) {
-            isDeleting.current = true;
-            nextSpeed = period;
-        } else if (isDeleting.current && nextText === '') {
-            isDeleting.current = false;
-            loopNum.current += 1;
-            nextSpeed = 500;
-        }
+      setTypedText(currentText);
+      textIndex.current = currentText.length;
 
-        timeoutRef.current = setTimeout(handleType, nextSpeed);
-        return nextText;
-      });
+      let delay = isDeleting.current ? erasingDelay : typingDelay;
+
+      if (!isDeleting.current && currentText === textToRotate) {
+        // Pause at the end of typing
+        delay = newTextDelay;
+        isDeleting.current = true;
+      } else if (isDeleting.current && currentText === '') {
+        // Finished erasing
+        isDeleting.current = false;
+        delay = 500; // Pause before starting to type again
+      }
+
+      timeoutRef.current = setTimeout(handleTyping, delay);
     };
 
-    timeoutRef.current = setTimeout(handleType, 500);
+    // Start the animation
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+    }
+    timeoutRef.current = setTimeout(handleTyping, 500);
 
+    // Cleanup function to clear timeout on component unmount
     return () => {
       if (timeoutRef.current) {
         clearTimeout(timeoutRef.current);
       }
     };
-  }, []);
+  }, []); // Empty dependency array ensures this runs only once
 
   return (
     <section id="about" className="py-20 md:py-32 bg-card">
