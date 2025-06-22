@@ -10,8 +10,8 @@ const HeroSection = () => {
   
   const toRotate = ["MERN Stack"];
   const period = 2000;
-  const typingSpeed = 150;
-  const deletingSpeed = 100;
+  const typingSpeed = 250;
+  const deletingSpeed = 150;
 
   const loopNum = useRef(0);
   const isDeleting = useRef(false);
