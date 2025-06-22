@@ -73,7 +73,7 @@ const ProjectsSection = () => {
                   <Card className="flex flex-col overflow-hidden h-full transition-shadow hover:shadow-lg">
                     <CardHeader>
                       <div className="relative w-full h-48 mb-4">
-                        <Image src={project.image} alt={project.title} layout="fill" objectFit="cover" className="rounded-t-lg" data-ai-hint={project.aiHint} />
+                        <Image src={project.image} alt={project.title} fill className="rounded-t-lg object-cover" data-ai-hint={project.aiHint} />
                       </div>
                       <CardTitle className="font-headline">{project.title}</CardTitle>
                       <CardDescription>{project.description}</CardDescription>
@@ -86,12 +86,12 @@ const ProjectsSection = () => {
                       </div>
                     </CardContent>
                     <CardFooter className="flex justify-end gap-4 mt-auto">
-                      <Button asChild variant="outline" disabled={project.githubUrl === '#'}>
+                      <Button asChild variant="outline" disabled={!project.githubUrl || project.githubUrl === '#'}>
                         <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
                           <Github className="mr-2 h-4 w-4" /> GitHub
                         </a>
                       </Button>
-                      <Button asChild className="bg-accent hover:bg-accent/90 text-accent-foreground" disabled={project.liveUrl === '#'}>
+                      <Button asChild className="bg-accent hover:bg-accent/90 text-accent-foreground" disabled={!project.liveUrl || project.liveUrl === '#'}>
                         <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
                           <ExternalLink className="mr-2 h-4 w-4" /> Live Demo
                         </a>

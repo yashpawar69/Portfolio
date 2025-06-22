@@ -46,9 +46,8 @@ const BlogSection = () => {
                 <Image 
                   src={post.image} 
                   alt={post.title} 
-                  layout="fill" 
-                  objectFit="cover" 
-                  className="rounded-t-lg group-hover:scale-110 transition-transform duration-300"
+                  fill
+                  className="rounded-t-lg object-cover group-hover:scale-110 transition-transform duration-300"
                   data-ai-hint={post.aiHint}
                 />
               </div>
