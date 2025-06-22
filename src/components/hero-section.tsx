@@ -1,8 +1,60 @@
+"use client"
+
+import { useState, useEffect, useRef } from 'react';
 import Image from 'next/image'
 import { Button } from '@/components/ui/button'
 import { Download, ArrowRight } from 'lucide-react'
 
 const HeroSection = () => {
+  const [typedText, setTypedText] = useState('');
+  
+  const toRotate = ["MERN Stack"];
+  const period = 2000;
+  const typingSpeed = 150;
+  const deletingSpeed = 100;
+
+  const loopNum = useRef(0);
+  const isDeleting = useRef(false);
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+
+  useEffect(() => {
+    const handleType = () => {
+      const i = loopNum.current % toRotate.length;
+      const fullText = toRotate[i];
+      
+      setTypedText(prev => {
+        const nextText = isDeleting.current
+          ? fullText.substring(0, prev.length - 1)
+          : fullText.substring(0, prev.length + 1);
+        
+        let nextSpeed = typingSpeed;
+        if (isDeleting.current) {
+            nextSpeed = deletingSpeed;
+        }
+
+        if (!isDeleting.current && nextText === fullText) {
+            isDeleting.current = true;
+            nextSpeed = period;
+        } else if (isDeleting.current && nextText === '') {
+            isDeleting.current = false;
+            loopNum.current += 1;
+            nextSpeed = 500;
+        }
+
+        timeoutRef.current = setTimeout(handleType, nextSpeed);
+        return nextText;
+      });
+    };
+
+    timeoutRef.current = setTimeout(handleType, 500);
+
+    return () => {
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+      }
+    };
+  }, []);
+
   return (
     <section id="about" className="py-20 md:py-32 bg-card">
       <div className="container mx-auto px-4">
@@ -12,7 +64,11 @@ const HeroSection = () => {
               Hi, I'm Yash Pawar
             </h1>
             <p className="text-xl md:text-2xl text-primary/80 mb-8 font-headline">
-              A Passionate <span className="text-accent animate-pulse">MERN Stack</span> Developer
+              A Passionate{' '}
+              <span className="text-accent border-r-2 border-r-accent animate-blink min-h-[32px] inline-block pr-1">
+                {typedText}
+              </span>{' '}
+              Developer
             </p>
             <p className="text-lg text-muted-foreground mb-8 max-w-xl">
               I specialize in building exceptional, high-quality websites and applications. With a strong foundation in modern web technologies, I transform ideas into powerful digital experiences.

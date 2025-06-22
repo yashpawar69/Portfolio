@@ -88,10 +88,15 @@ export default {
             height: '0',
           },
         },
+        blink: {
+          '0%, 100%': { borderColor: 'transparent' },
+          '50%': { borderColor: 'hsl(var(--accent))' },
+        },
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
+        blink: 'blink 1s step-end infinite',
       },
     },
   },
