@@ -27,7 +27,7 @@ const projects = [
   {
     title: 'Shop Me',
     description: 'Shop Me — A sleek, AI-powered shopping platform with curated product discovery, wishlist features, and smart recommendations. Includes a minimalist admin dashboard, seamless checkout, and external retailer integration for smooth purchasing.',
-    image: 'https://placehold.co/600x400.png',
+    image: '/images/shopme.png',
     technologies: ['Next.js', 'MongoDB', 'React', 'Tailwind CSS', 'TypeScript', 'Gemini'],
     liveUrl: '#',
     githubUrl: '#',
