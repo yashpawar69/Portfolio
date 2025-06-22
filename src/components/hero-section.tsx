@@ -12,7 +12,7 @@ const HeroSection = () => {
               Hi, I'm Yash Pawar
             </h1>
             <p className="text-xl md:text-2xl text-primary/80 mb-8 font-headline">
-              A Passionate <span className="text-accent">MERN Stack</span> Developer
+              A Passionate <span className="text-accent animate-pulse">MERN Stack</span> Developer
             </p>
             <p className="text-lg text-muted-foreground mb-8 max-w-xl">
               I specialize in building exceptional, high-quality websites and applications. With a strong foundation in modern web technologies, I transform ideas into powerful digital experiences.
