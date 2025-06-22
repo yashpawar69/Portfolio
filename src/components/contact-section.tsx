@@ -1,5 +1,6 @@
 "use client"
 
+import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import * as z from 'zod'
@@ -16,7 +17,8 @@ import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
 import { useToast } from '@/hooks/use-toast'
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card'
-import { Mail, Phone, MapPin, Send } from 'lucide-react'
+import { Mail, Phone, MapPin, Send, Loader2 } from 'lucide-react'
+import { sendContactMessage } from '@/ai/flows/contact-flow'
 
 const formSchema = z.object({
   name: z.string().min(2, { message: 'Name must be at least 2 characters.' }),
@@ -26,6 +28,8 @@ const formSchema = z.object({
 
 const ContactSection = () => {
   const { toast } = useToast()
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -35,13 +39,30 @@ const ContactSection = () => {
     },
   })
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    console.log(values)
-    toast({
-      title: 'Message Sent!',
-      description: 'Thank you for reaching out. I will get back to you soon.',
-    })
-    form.reset()
+  async function onSubmit(values: z.infer<typeof formSchema>) {
+    setIsSubmitting(true)
+    try {
+      const result = await sendContactMessage(values)
+
+      if (result.success) {
+        toast({
+          title: 'Message Sent!',
+          description: 'Thank you for reaching out. I will get back to you soon.',
+        })
+        form.reset()
+      } else {
+        throw new Error(result.message)
+      }
+    } catch (error) {
+      console.error('Failed to send message:', error)
+      toast({
+        variant: 'destructive',
+        title: 'Uh oh! Something went wrong.',
+        description: 'There was a problem sending your message. Please try again later.',
+      })
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   return (
@@ -125,8 +146,13 @@ const ContactSection = () => {
                       </FormItem>
                     )}
                   />
-                  <Button type="submit" className="w-full bg-accent hover:bg-accent/90 text-accent-foreground" size="lg">
-                    Send Message <Send className="ml-2 h-4 w-4" />
+                  <Button type="submit" className="w-full bg-accent hover:bg-accent/90 text-accent-foreground" size="lg" disabled={isSubmitting}>
+                    {isSubmitting ? 'Sending...' : 'Send Message'}
+                    {isSubmitting ? (
+                      <Loader2 className="animate-spin" />
+                    ) : (
+                      <Send />
+                    )}
                   </Button>
                 </form>
               </Form>
