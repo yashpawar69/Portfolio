@@ -89,7 +89,7 @@ const HeroSection = () => {
           <div className="flex justify-center">
             <div className="relative w-72 h-72 md:w-80 md:h-80 lg:w-96 lg:h-96">
               <Image
-                src="https://placehold.co/400x400.png"
+                src="/images/me.jpeg"
                 alt="Yash Pawar"
                 width={400}
                 height={400}
