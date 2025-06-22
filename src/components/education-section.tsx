@@ -1,19 +1,28 @@
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card'
+import { Certificate } from 'crypto'
 import { GraduationCap } from 'lucide-react'
 
 const educationHistory = [
   {
-    degree: 'Bachelor of Science in Computer Science',
-    institution: 'University of Technology',
-    period: '2018 - 2022',
-    description: 'Focused on software development, algorithms, and data structures. Completed a final year project on a full-stack web application.',
+    degree: 'Bachelor of Engineering in Computer Science',
+    institution: 'Mumbai University’s ',
+    period: '2023 - 2027',
+    description: 'Focused on web development , projects on a full-stack web application.',
   },
   {
     degree: 'MERN Stack Development Bootcamp',
-    institution: 'Online Code Academy',
-    period: '2022',
+    institution: 'udemy',
+    period: '2025',
     description: 'Intensive training on MongoDB, Express.js, React, and Node.js. Built multiple hands-on projects from scratch.',
   },
+  {
+    degree: 'DSA',
+    institution: 'YOUTUBE',
+    period: '2025 - present',
+    description: 'Self-learning Data Structures and Algorithms',
+  },
+
+
 ]
 
 const EducationSection = () => {

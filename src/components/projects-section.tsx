@@ -6,22 +6,23 @@ import { Github, ExternalLink } from 'lucide-react'
 
 const projects = [
   {
-    title: 'MERN E-commerce Platform',
-    description: 'A full-stack e-commerce site featuring product listings, a shopping cart, user authentication, and an admin dashboard for managing products and orders.',
-    image: 'https://placehold.co/600x400.png',
-    technologies: ['React', 'Node.js', 'Express', 'MongoDB', 'Redux Toolkit'],
-    liveUrl: '#',
-    githubUrl: '#',
-    aiHint: 'online store',
-  },
+    title: 'Next Chess Game',
+    description: 'An interactive full-stack online chess platform built with React and Next.js. Features real-time gameplay, and a responsive UI. Ideal for casual and competitive play.',
+    image: '/next.png',
+    technologies: ['React', 'Next.js', 'Node.js', 'Express', 'Tailwind CSS', 'Vercel'],
+    liveUrl: 'https://next-chess-00.vercel.app/',
+    githubUrl: 'https://github.com/yashpawar69/NextChess',
+    aiHint: 'multiplayer chess game',
+  }
+  ,
   {
-    title: 'Task Management App',
-    description: 'A collaborative task management application that allows users to create projects, assign tasks, and track progress with an intuitive drag-and-drop interface.',
+    title: 'AI-Powered Blogging Platform',
+    description: 'A minimalist, elegant blogging platform where users can write, edit, and manage posts effortlessly. Built with Next.js and Tailwind CSS, AI-powered live tag suggestions enhance discoverability and streamline content creation.',
     image: 'https://placehold.co/600x400.png',
-    technologies: ['React', 'TypeScript', 'Node.js', 'PostgreSQL', 'Socket.IO'],
+    technologies: ['Next.js', 'Tailwind CSS', 'Genkit', 'AI'],
     liveUrl: '#',
     githubUrl: '#',
-    aiHint: 'kanban board',
+    aiHint: 'blog writing interface',
   },
   {
     title: 'Portfolio Website Generator',
