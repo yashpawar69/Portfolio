@@ -22,7 +22,7 @@ const projects = [
     technologies: ['react', 'mongodb', 'gemini', 'Next.js', 'Tailwind CSS'],
     liveUrl: '#',
     githubUrl: '#',
-    aiHint: 'blog writing interface',
+    aiHint: 'minimalist journal',
   },
   {
     title: 'Shop Me',
@@ -31,7 +31,7 @@ const projects = [
     technologies: ['Next.js', 'MongoDB', 'React', 'Tailwind CSS', 'TypeScript', 'Gemini'],
     liveUrl: '#',
     githubUrl: '#',
-    aiHint: 'online shopping',
+    aiHint: 'fashion ecommerce',
   },
 ]
 
