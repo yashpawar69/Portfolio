@@ -40,6 +40,15 @@ const projects = [
     githubUrl: '#',
     aiHint: 'fashion ecommerce online',
   },
+  {
+    title: 'Ludo Game',
+    description: 'A classic Ludo board game brought to life with a modern, interactive web interface. Built with React and Socket.IO, it supports real-time multiplayer gameplay.',
+    image: 'https://placehold.co/600x400.png',
+    technologies: ['React', 'Node.js', 'Socket.IO', 'Express', 'Tailwind CSS'],
+    liveUrl: '#',
+    githubUrl: '#',
+    aiHint: 'ludo board game',
+  },
 ]
 
 const ProjectsSection = () => {
