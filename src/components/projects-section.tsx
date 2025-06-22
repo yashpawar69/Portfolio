@@ -45,7 +45,7 @@ const projects = [
     description: 'A modern, interactive web version of the classic Ludo game for 2-4 players. Features an intuitive, responsive board with drag-and-drop token movement and smooth animations for dice rolls and player turns.',
     image: '/images/ludo.png',
     technologies: ['Next.js', 'TypeScript', 'Tailwind CSS'],
-    liveUrl: '#',
+    liveUrl: 'https://ludo-game-blond.vercel.app/',
     githubUrl: '#',
     aiHint: 'ludo board game',
   },
