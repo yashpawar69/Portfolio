@@ -19,7 +19,7 @@ const projects = [
     title: 'My Journal',
     description: 'A minimalist, elegant blogging platform where users can write, edit, and manage posts effortlessly. Built with Next.js and Tailwind CSS, AI-powered live tag suggestions enhance discoverability and streamline content creation.',
     image: 'https://placehold.co/600x400.png',
-    technologies: ['react', 'mongodb', 'gemini'],
+    technologies: ['react', 'mongodb', 'gemini', 'Next.js', 'Tailwind CSS'],
     liveUrl: '#',
     githubUrl: '#',
     aiHint: 'blog writing interface',
