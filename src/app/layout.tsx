@@ -5,6 +5,9 @@ import { Toaster } from "@/components/ui/toaster"
 export const metadata: Metadata = {
   title: 'Yash Pawar - MERN Stack Developer',
   description: 'Yash Pawar - MERN Stack Developer Portfolio',
+  icons: {
+    icon: '/images/favicon.ico',
+  },
 };
 
 export default function RootLayout({
