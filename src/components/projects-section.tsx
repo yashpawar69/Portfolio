@@ -3,6 +3,13 @@ import { Card, CardContent, CardFooter, CardHeader, CardTitle, CardDescription }
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { Github, ExternalLink } from 'lucide-react'
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel"
 
 const projects = [
   {
@@ -22,7 +29,7 @@ const projects = [
     technologies: ['react', 'mongodb', 'gemini', 'Next.js', 'Tailwind CSS'],
     liveUrl: '#',
     githubUrl: '#',
-    aiHint: 'blog journal',
+    aiHint: 'blog journal writing',
   },
   {
     title: 'Shop Me',
@@ -31,7 +38,7 @@ const projects = [
     technologies: ['Next.js', 'MongoDB', 'React', 'Tailwind CSS', 'TypeScript', 'Gemini'],
     liveUrl: 'https://shopme-git-master-yashs-projects-e4896251.vercel.app/',
     githubUrl: '#',
-    aiHint: 'fashion ecommerce',
+    aiHint: 'fashion ecommerce online',
   },
 ]
 
@@ -43,38 +50,52 @@ const ProjectsSection = () => {
         <p className="text-lg text-muted-foreground text-center mb-12 max-w-3xl mx-auto">
           Here are some of the projects I'm proud to have worked on. Each one represents a challenge I was excited to tackle.
         </p>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project) => (
-            <Card key={project.title} className="flex flex-col overflow-hidden hover:scale-105 transition-transform duration-300">
-              <CardHeader>
-                <div className="relative w-full h-48 mb-4">
-                   <Image src={project.image} alt={project.title} layout="fill" objectFit="cover" className="rounded-t-lg" data-ai-hint={project.aiHint} />
+        <Carousel
+          opts={{
+            align: "start",
+            loop: true,
+          }}
+          className="w-full max-w-sm sm:max-w-xl md:max-w-3xl lg:max-w-5xl mx-auto"
+        >
+          <CarouselContent>
+            {projects.map((project) => (
+              <CarouselItem key={project.title} className="md:basis-1/2 lg:basis-1/3">
+                <div className="p-1 h-full">
+                  <Card className="flex flex-col overflow-hidden h-full transition-shadow hover:shadow-lg">
+                    <CardHeader>
+                      <div className="relative w-full h-48 mb-4">
+                        <Image src={project.image} alt={project.title} layout="fill" objectFit="cover" className="rounded-t-lg" data-ai-hint={project.aiHint} />
+                      </div>
+                      <CardTitle className="font-headline">{project.title}</CardTitle>
+                      <CardDescription>{project.description}</CardDescription>
+                    </CardHeader>
+                    <CardContent className="flex-grow">
+                      <div className="flex flex-wrap gap-2">
+                        {project.technologies.map((tech) => (
+                          <Badge key={tech} variant="secondary">{tech}</Badge>
+                        ))}
+                      </div>
+                    </CardContent>
+                    <CardFooter className="flex justify-end gap-4 mt-auto">
+                      <Button asChild variant="outline" disabled={project.githubUrl === '#'}>
+                        <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
+                          <Github className="mr-2 h-4 w-4" /> GitHub
+                        </a>
+                      </Button>
+                      <Button asChild className="bg-accent hover:bg-accent/90 text-accent-foreground" disabled={project.liveUrl === '#'}>
+                        <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
+                          <ExternalLink className="mr-2 h-4 w-4" /> Live Demo
+                        </a>
+                      </Button>
+                    </CardFooter>
+                  </Card>
                 </div>
-                <CardTitle className="font-headline">{project.title}</CardTitle>
-                <CardDescription>{project.description}</CardDescription>
-              </CardHeader>
-              <CardContent className="flex-grow">
-                <div className="flex flex-wrap gap-2">
-                  {project.technologies.map((tech) => (
-                    <Badge key={tech} variant="secondary">{tech}</Badge>
-                  ))}
-                </div>
-              </CardContent>
-              <CardFooter className="flex justify-end gap-4">
-                <Button asChild variant="outline" disabled={project.githubUrl === '#'}>
-                  <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
-                    <Github className="mr-2 h-4 w-4" /> GitHub
-                  </a>
-                </Button>
-                <Button asChild className="bg-accent hover:bg-accent/90 text-accent-foreground" disabled={project.liveUrl === '#'}>
-                  <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
-                    <ExternalLink className="mr-2 h-4 w-4" /> Live Demo
-                  </a>
-                </Button>
-              </CardFooter>
-            </Card>
-          ))}
-        </div>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          <CarouselPrevious className="hidden md:flex" />
+          <CarouselNext className="hidden md:flex" />
+        </Carousel>
       </div>
     </section>
   )
