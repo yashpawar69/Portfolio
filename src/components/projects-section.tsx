@@ -27,8 +27,8 @@ const projects = [
     description: 'A minimalist, elegant blogging platform where users can write, edit, and manage posts effortlessly. Built with Next.js and Tailwind CSS, AI-powered live tag suggestions enhance discoverability and streamline content creation.',
     image: '/images/journal.png',
     technologies: ['react', 'mongodb', 'gemini', 'Next.js', 'Tailwind CSS'],
-    liveUrl: '#',
-    githubUrl: '#',
+    liveUrl: 'https://my-journal-tau.vercel.app/',
+    githubUrl: 'https://github.com/yashpawar69/My-journal',
     aiHint: 'blogging writing',
   },
   {
