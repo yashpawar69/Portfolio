@@ -37,7 +37,7 @@ const projects = [
     image: '/images/shopme.png',
     technologies: ['Next.js', 'MongoDB', 'React', 'Tailwind CSS', 'TypeScript', 'Gemini'],
     liveUrl: 'https://shopme-git-master-yashs-projects-e4896251.vercel.app/',
-    githubUrl: '#',
+    githubUrl: 'https://github.com/yashpawar69/studio',
     aiHint: 'fashion online shopping',
   },
   {
@@ -46,7 +46,7 @@ const projects = [
     image: '/images/ludo.png',
     technologies: ['Next.js', 'TypeScript', 'Tailwind CSS'],
     liveUrl: 'https://ludo-game-blond.vercel.app/',
-    githubUrl: '#',
+    githubUrl: 'https://github.com/yashpawar69/Ludo-game',
     aiHint: 'ludo board game',
   },
 ]
