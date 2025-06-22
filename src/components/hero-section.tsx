@@ -2,9 +2,8 @@
 
 import { useState, useEffect, useRef } from 'react';
 import Image from 'next/image'
-import { Button, buttonVariants } from '@/components/ui/button'
+import { Button } from '@/components/ui/button'
 import { Download, ArrowRight } from 'lucide-react'
-import { cn } from '@/lib/utils';
 
 const HeroSection = () => {
   const [typedText, setTypedText] = useState('');
@@ -56,6 +55,15 @@ const HeroSection = () => {
     };
   }, []); // Empty dependency array ensures this runs only once
 
+  const handleDownload = () => {
+    const link = document.createElement('a');
+    link.href = '/Yash-Pawar-resume.pdf';
+    link.setAttribute('download', 'Yash-Pawar-resume.pdf');
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   return (
     <section id="about" className="py-20 md:py-32 bg-card">
       <div className="container mx-auto px-4">
@@ -80,9 +88,9 @@ const HeroSection = () => {
                   Contact Me <ArrowRight className="ml-2 h-5 w-5" />
                 </a>
               </Button>
-              <a href="/Yash-Pawar-resume.pdf" download="Yash-Pawar-resume.pdf" target="_blank" rel="noopener noreferrer" className={cn(buttonVariants({ variant: "outline", size: "lg" }))}>
+              <Button variant="outline" size="lg" onClick={handleDownload}>
                 Download Resume <Download className="ml-2 h-5 w-5" />
-              </a>
+              </Button>
             </div>
           </div>
           <div className="flex justify-center">
