@@ -2,8 +2,9 @@
 
 import { useState, useEffect, useRef } from 'react';
 import Image from 'next/image'
-import { Button } from '@/components/ui/button'
+import { Button, buttonVariants } from '@/components/ui/button'
 import { Download, ArrowRight } from 'lucide-react'
+import { cn } from '@/lib/utils';
 
 const HeroSection = () => {
   const [typedText, setTypedText] = useState('');
@@ -79,11 +80,9 @@ const HeroSection = () => {
                   Contact Me <ArrowRight className="ml-2 h-5 w-5" />
                 </a>
               </Button>
-              <Button asChild variant="outline" size="lg">
-                <a href="/Yash-Pawar-resume.pdf" download>
-                  Download Resume <Download className="ml-2 h-5 w-5" />
-                </a>
-              </Button>
+              <a href="/Yash-Pawar-resume.pdf" download="Yash-Pawar-resume.pdf" className={cn(buttonVariants({ variant: "outline", size: "lg" }))}>
+                Download Resume <Download className="ml-2 h-5 w-5" />
+              </a>
             </div>
           </div>
           <div className="flex justify-center">
